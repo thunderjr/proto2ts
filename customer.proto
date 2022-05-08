@@ -1,0 +1,24 @@
+import public "./wallet.proto";
+import public "./origin.proto";
+import public "./order.proto";
+import public "./transfer.proto";
+
+syntax = "proto3";
+
+package exchange;
+
+message Customer {
+  int32 id = 1;
+  string customerExternalId = 2;
+  int32 walletId = 3;
+  int32 originId = 4;
+  string name = 5;
+  string document = 6;
+  string customerUuId = 7;
+  string createdAt = 8;
+  string deletedAt = 9;
+  Wallet wallet = 10;
+  Origin origin = 11;
+  repeated Order orders = 12;
+  repeated Transfer transfers = 13;
+}
